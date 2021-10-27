@@ -36,6 +36,14 @@ services:
         depends_on:
             - nginx
             - mariadb
+            - redis
+        restart: always
+    redis:
+        build: /home/ylazrek/Desktop/inception/srcs/requirements/bonus/redis
+        image: redis
+        container_name: redis
+        networks:
+            - inception_net
         restart: always
 
 

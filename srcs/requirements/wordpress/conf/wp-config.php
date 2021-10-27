@@ -56,7 +56,10 @@ define( 'AUTH_SALT',        'pU2@ Z*WqME?=NYOKHaq<:CquzzOBLmH@eif9|Vog9JH>Vh<B+/
 define( 'SECURE_AUTH_SALT', 'L-;`A?>mO~/FFl`K*lgB_S<3d}S^Ybc,Z*dJU)E]SG,J~ IxDQnb}3-cPtxj^QXW' );
 define( 'LOGGED_IN_SALT',   'm!~xDz]owbk[pBg,#g71h(Fe([Y8X0Z&:99/<D+Z8sUg.MA=h>mBX!;Hp]~|Gtwb' );
 define( 'NONCE_SALT',       'RC-@d:fP1y`t&r/D<ZwE?vFX:QF!B+|hLg].Gk{B?YJ6}]6vGHxE15bC]u@xQ=71' );
-
+define('WP_CACHE_KEY_SALT', 'https://ylazrek.42.fr/wordpress');
+define('WP_CACHE', true);
+define( 'WP_REDIS_HOST', 'redis' );
+define( 'WP_REDIS_PORT', 6379 );
 /**#@-*/
 
 /**
