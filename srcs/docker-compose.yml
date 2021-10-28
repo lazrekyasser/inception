@@ -45,6 +45,18 @@ services:
         networks:
             - inception_net
         restart: always
+    ftp:
+        build: /home/ylazrek/Desktop/inception/srcs/requirements/bonus/ftp
+        image: ftp
+        container_name: ftp
+        ports:
+            - "21:21"
+            - "10000:10000"
+        volumes:
+            - wp_file_data:/home/ylazrek/
+        networks:
+            - inception_net
+        restart: always
 
 
 volumes:
