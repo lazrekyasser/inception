@@ -6,4 +6,6 @@ COPY conf/vsftpd.conf /etc/vsftpd/
 RUN adduser -D "ylazrek"
 RUN echo "ylazrek:yasser" | chpasswd
 
+# RUN chown -R ylazrek:ylazrek 
+
 CMD /usr/sbin/vsftpd  /etc/vsftpd/vsftpd.conf

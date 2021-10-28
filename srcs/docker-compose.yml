@@ -57,6 +57,21 @@ services:
         networks:
             - inception_net
         restart: always
+    adminer:
+        build: /home/ylazrek/Desktop/inception/srcs/requirements/bonus/adminer
+        image: adminer
+        container_name: adminer
+        ports:
+            - "5001:5001"
+        networks:
+            - inception_net
+        volumes:
+            - wp_file_data:/var/www/
+        depends_on:
+            - mariadb
+            - nginx
+        restart: always
+        
 
 
 volumes:
@@ -65,13 +80,13 @@ volumes:
         driver_opts:
             type: 'none'
             o: 'bind'
-            device: '/home/ylazrek/data/wp_file_data'
+            device: '/home/ylazrek/data/wp_file_data/'
     wp_DB_data:
         driver: local
         driver_opts:
             type: 'none'
             o: 'bind'
-            device: '/home/ylazrek/data/wp_DB_data'
+            device: '/home/ylazrek/data/wp_DB_data/'
 
 networks:
     inception_net:
