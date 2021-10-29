@@ -71,6 +71,17 @@ services:
             - mariadb
             - nginx
         restart: always
+    site:
+        build: /home/ylazrek/Desktop/inception/srcs/requirements/bonus/site
+        image: site
+        container_name: site
+        ports:
+            - "3001:3001"
+        networks:
+            - inception_net
+        depends_on:
+            - nginx
+        restart: always
         
 
 
