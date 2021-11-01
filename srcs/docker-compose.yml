@@ -82,7 +82,19 @@ services:
         depends_on:
             - nginx
         restart: always
-        
+    backup:
+        build: /home/ylazrek/Desktop/inception/srcs/requirements/bonus/backup
+        image: backup
+        container_name: backup
+        networks:
+            - inception_net
+        depends_on:
+            - mariadb
+        volumes:
+            - wp_DB_data:/mariadb
+            - backup:/backup
+        restart: always
+
 
 
 volumes:
@@ -98,6 +110,12 @@ volumes:
             type: 'none'
             o: 'bind'
             device: '/home/ylazrek/data/wp_DB_data/'
+    backup:
+        driver: local
+        driver_opts:
+            type: 'none'
+            o: 'bind'
+            device: '/home/ylazrek/data/backup/'
 
 networks:
     inception_net:
