@@ -20,7 +20,7 @@
 #innodb_autoinc_lock_mode=2
 #
 # Allow server to accept connections on all interfaces.
-#
+#######################################
 #bind-address=0.0.0.0
 #
 # Optional setting

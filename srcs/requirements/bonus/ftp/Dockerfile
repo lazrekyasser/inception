@@ -3,9 +3,6 @@ FROM alpine:3.13
 RUN apk update && apk upgrade
 RUN apk add vsftpd openrc
 COPY conf/vsftpd.conf /etc/vsftpd/
-RUN adduser -D "ylazrek"
-RUN echo "ylazrek:yasser" | chpasswd
+COPY conf/init.sh /tmp
 
-# RUN chown -R ylazrek:ylazrek 
-
-CMD /usr/sbin/vsftpd  /etc/vsftpd/vsftpd.conf
+CMD sh ./tmp/init.sh && /usr/sbin/vsftpd  /etc/vsftpd/vsftpd.conf

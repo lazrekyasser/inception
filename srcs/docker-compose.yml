@@ -54,6 +54,8 @@ services:
             - "10000:10000"
         volumes:
             - wp_file_data:/home/ylazrek/
+        env_file:
+            - .env
         networks:
             - inception_net
         restart: always

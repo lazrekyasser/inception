@@ -1,13 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link
+		rel="stylesheet"
+		href="https://unpkg.com/swiper/swiper-bundle.min.css"
+	/>
+	<style>
+		:root {
+			--color-nav:#576574;
+			--color-text:#ff9f43;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			height: 100vh;
+			font-family: "Cascade Code", monospace;
+			background:antiquewhite;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.swiper {
+			width: 100%;
+			height: 100%;
+		}
+		header {
+			height: 500px;
+		}
+		.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: white;
+
+			/* Center slide text vertically */
+			/* display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex; */
+			display: flex;
+			/* -webkit-box-pack: center; */
+			/* -ms-flex-pack: center; */
+			justify-content: center;
+			/* -webkit-box-align: center; */
+			/* -ms-flex-align: center; */
+			-webkit-align-items: center;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.swiper-slide img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.swiper-slide div {
+			/* width: 40%; */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.swiper-slide div:first-child {
+			width: 30%;
+			max-width: 600px;
+			min-width: 400px;
+		}
+		.swiper-slide div:first-child a {
+			display:flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+			color: var(--color-text)
+		}
+		.swiper-slide div:last-child {
+			width: 60%;
+			max-width: 800px;
+			min-width: 400px;
+		}
+		.swiper-slide div:first-child img {
+			width: 50%
+		}
+		h1 {
+			text-align: center;
+			margin-bottom: 180px;
+			margin-top: 50px;
+			color: #ffffff;
+			text-shadow: 5px 5px 5px black;
+			font-size: 70px;
+		}
+		footer {
+			position: absolute;
+			bottom: 0;
+			background: #58fe56;
+			width: 100%;
+			padding: 10px;
+			text-align: center;
+			display: flex;
+			justify-content: space-between;
+		}
+	</style>
 </head>
 <body>
-    hello node app
+	<header>
+		<h1>Inception</h1>
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+			  <div class="swiper-slide">
+				  <div>
+						<a href="https://ylazrek.42.fr">
+							<img src="https://cdn.cdnlogo.com/logos/w/65/wordpress.svg">
+							<h2>Wordpress</h2>
+						</a>
+				  </div>
+				  <div>
+					<img src="https://s.w.org/images/home/screen-themes.png?4" >
+				  </div>
+			  </div>
+			  <div class="swiper-slide">
+				  <div>
+					<a href="https://ylazrek.42.fr/adminer">
+						<img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_b0c7e06f136175d0032a9e56d638ad9e/adminer.png">
+						<h2>Adminer</h2>
+					</a>
+				  </div>
+				  <div>
+					<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--krzoNFlt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://retool.com/blog/content/images/2021/10/img1.png">
+				  </div>
+			  </div>
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		  </div>
+	</header>
+	<footer>
+		<div>Source :
+			<a href="https://swiperjs.com/demos">Swiper js</a>
+		</div>
+		<div>
+			ylazrek
+		</div>
+	</footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+	</script>
 </body>
-<!-- <script src="./app.js"></script> -->
 </html>
